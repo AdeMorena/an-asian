@@ -1,0 +1,371 @@
+.about {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2d3142;
+}
+
+.about p {
+    font-size: 1.2em;
+    color: #808080;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.map {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.map h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+iframe {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+}
+
+@media (max-width: 768px) {
+    .about h2 {
+        font-size: 2em;
+    }
+
+    .about p {
+        font-size: 1em;
+        max-width: 90%;
+    }
+
+    .map h3 {
+        font-size: 1.8em;
+    }
+
+    .map-container iframe {
+        max-width: 100%;
+        height: 300px;
+    }
+
+    .footer .footer-section {
+        margin-bottom: 15px;
+    }
+
+    .footer .footer-section h4 {
+        font-size: 1.2em;
+    }
+
+    .footer .footer-section ul li a {
+        font-size: 1em;
+    }
+
+    .footer .footer-bottom p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about h2 {
+        font-size: 1.8em;
+    }
+
+    .about p {
+        font-size: 0.9em;
+        max-width: 100%;
+    }
+
+    .map h3 {
+        font-size: 1.6em;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+
+    .footer .footer-section h4 {
+        font-size: 1.1em;
+    }
+
+    .footer .footer-section ul li a {
+        font-size: 0.9em;
+    }
+
+    .footer .footer-bottom p {
+        font-size: 0.8em;
+    }
+}
+
+.comments-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #2d3142;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #808080;
+}
+
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#commentForm input,
+#commentForm textarea {
+    padding: 10px;
+    border: 1px solid #f8f8f8;
+    border-radius: 6px;
+    font-size: 1em;
+    resize: none;
+}
+
+#commentForm button {
+    background-color: #ffe36f;
+    color: #2d3142;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#commentForm button:hover {
+    background-color: #808080;
+}
+
+#commentList {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+#commentList li {
+    background-color: #fff;
+    border-left: 4px solid #ff6f61;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.comments-section h3 {
+    color: #ffe36f;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.popup-content {
+    background-color: #fff;
+    border-left: 4px solid #ff6f61;
+    padding: 15px;
+    border-radius: 6px;
+    max-width: 500px;
+    width: 90%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    color: #2d3142;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slideFadeIn 0.3s ease-out;
+}
+
+.popup-content.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+.popup-content p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .popup-content {
+        max-width: 80%;
+        padding: 12px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        max-width: 90%;
+        padding: 10px;
+        font-size: 0.85em;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+/* Додаємо до існуючого style3.css */
+.auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .auth-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .auth-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .auth-container button:hover {
+    background-color: #218838;
+  }
+  
+  .auth-container .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .auth-container p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .auth-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .auth-container a:hover {
+    text-decoration: underline;
+  }
+ .password-rules {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+}
+
+.password-rules h4 {
+  margin-bottom: 10px;
+}
+
+.password-rules ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.password-rules li {
+  margin-bottom: 5px;
+}
+
+.forgot-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.forgot-password-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.forgot-password-submit-btn {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.forgot-password-submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.success {
+  color: #28a745;
+  margin-bottom: 15px;
+  text-align: center;
+}
