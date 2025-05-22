@@ -15,7 +15,6 @@ function About() {
   const [showPopup, setShowPopup] = useState(false);
   const [badComment, setBadComment] = useState('');
   const [user, setUser] = useState(null);
-  const [serverMessage, setServerMessage] = useState('');
   const navigate = useNavigate();
 
   const badWords = [
@@ -43,19 +42,6 @@ function About() {
   };
 
   useEffect(() => {
-    const fetchServerMessage = async () => {
-      try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/message`);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const data = await response.json();
-        setServerMessage(data.message);
-      } catch (error) {
-        console.error('Error fetching server message:', error.message);
-        setServerMessage('Failed to load server message');
-      }
-    };
-    fetchServerMessage();
-
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       if (currentUser) setName(currentUser.email);
@@ -120,7 +106,6 @@ function About() {
         setRating(5);
       } catch (error) {
         console.error('Error adding comment:', error);
-        setServerMessage('Failed to add comment');
       }
     }
   };
@@ -137,7 +122,6 @@ function About() {
         <p>
           Welcome to AnAsian, a place where traditional Asian cuisine meets modern presentation. We take care of every dish to give you an unforgettable gastronomic experience.
         </p>
-        <p><strong>Server says:</strong> {serverMessage}</p>
       </div>
       <div className="map">
         <h3>Where we are?</h3>
